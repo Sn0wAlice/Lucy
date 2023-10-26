@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@clickhouse/client": "^0.2.4",
+    "tor-request": "^3.1.0"
+  },
+  "name": "lucy",
+  "description": "![](./src/logo.png)",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

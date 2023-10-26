@@ -1,0 +1,347 @@
+[
+    {
+        "database": "lucy",
+        "tables": [
+            {
+                "name": "wait",
+                "columns": [
+                    {
+                        "name": "fullurl",
+                        "type": "String"
+                    },
+                    {
+                        "name": "priority",
+                        "type": "Int16 default 0"
+                    }
+                ],
+                "pk": "fullurl"
+            },
+            {
+                "name": "domain",
+                "columns": [
+                    {
+                        "name": "domain",
+                        "type": "String"
+                    },
+                    {
+                        "name": "safe",
+                        "type": "Boolean default true"
+                    }, 
+                    {
+                        "name": "suspect",
+                        "type": "Boolean default false"
+                    }, 
+                    {
+                        "name": "illegal",
+                        "type": "Boolean default false"
+                    }
+                ],
+                "pk": "domain"
+            },
+            {
+                "name": "url",
+                "columns": [
+                    {
+                        "name": "token",
+                        "type": "String"
+                    },
+                    {
+                        "name": "domain",
+                        "type": "String"
+                    },
+                    {
+                        "name": "path",
+                        "type": "String"
+                    },
+                    {
+                        "name": "title",
+                        "type": "String"
+                    },
+                    {
+                        "name": "lang",
+                        "type": "String"
+                    },
+                    {
+                        "name": "last_update",
+                        "type": "DateTime64"
+                    }
+                ],
+                "pk": "token"
+            },
+            {
+                "name": "content",
+                "columns": [
+                    {
+                        "name": "urltoken",
+                        "type": "String"
+                    },
+                    {
+                        "name": "content",
+                        "type": "text"
+                    }
+                ],
+                "pk": "urltoken"
+            },
+            {
+                "name": "external_link",
+                "columns": [
+                    {
+                        "name": "urltoken",
+                        "type": "String"
+                    },
+                    {
+                        "name": "link",
+                        "type": "String"
+                    }
+                ],
+                "pk": "urltoken, link"
+            },
+            {
+                "name": "internal_link",
+                "columns": [
+                    {
+                        "name": "urltoken",
+                        "type": "String"
+                    },
+                    {
+                        "name": "path",
+                        "type": "String"
+                    }
+                ],
+                "pk": "urltoken, path"
+            },
+            {
+                "name": "imgs",
+                "columns": [
+                    {
+                        "name": "token",
+                        "type": "String"
+                    },
+                    {
+                        "name": "urltoken",
+                        "type": "String"
+                    },
+                    {
+                        "name": "src",
+                        "type": "String"
+                    },
+                    {
+                        "name": "alt",
+                        "type": "String"
+                    },
+                    {
+                        "name": "width",
+                        "type": "Int16 default 0"
+                    },
+                    {
+                        "name": "height",
+                        "type": "Int16 default 0"
+                    },
+                    {
+                        "name": "id",
+                        "type": "String"
+                    }
+                ],
+                "pk": "token"
+            },
+            {
+                "name": "audio",
+                "columns": [
+                    {
+                        "name": "token",
+                        "type": "String"
+                    },
+                    {
+                        "name": "urltoken",
+                        "type": "String"
+                    },
+                    {
+                        "name": "src",
+                        "type": "String"
+                    },
+                    {
+                        "name": "alt",
+                        "type": "String"
+                    },
+                    {
+                        "name": "id",
+                        "type": "String"
+                    }
+                ],
+                "pk": "token"
+            },
+            {
+                "name": "video",
+                "columns": [
+                    {
+                        "name": "token",
+                        "type": "String"
+                    },
+                    {
+                        "name": "urltoken",
+                        "type": "String"
+                    },
+                    {
+                        "name": "alt",
+                        "type": "String"
+                    },
+                    {
+                        "name": "id",
+                        "type": "String"
+                    },
+                    {
+                        "name": "width",
+                        "type": "Int16 default 0"
+                    },
+                    {
+                        "name": "height",
+                        "type": "Int16 default 0"
+                    }
+                ],
+                "pk": "token"
+            },
+            {
+                "name": "video_source",
+                "columns": [
+                    {
+                        "name": "video_token",
+                        "type": "String"
+                    },
+                    {
+                        "name": "src",
+                        "type": "String"
+                    },
+                    {
+                        "name": "type",
+                        "type": "String"
+                    }
+                ],
+                "pk": "video_token, src"
+            },
+            {
+                "name": "forms",
+                "columns": [
+                    {
+                        "name": "token",
+                        "type": "String"
+                    },
+                    {
+                        "name": "pagetoken",
+                        "type": "String"
+                    },
+                    {
+                        "name": "id",
+                        "type": "String"
+                    },
+                    {
+                        "name": "name",
+                        "type": "String"
+                    },
+                    {
+                        "name": "action",
+                        "type": "String"
+                    },
+                    {
+                        "name": "enctype",
+                        "type": "String"
+                    },
+                    {
+                        "name": "accept_charset",
+                        "type": "String"
+                    },
+                    {
+                        "name": "autocomplete",
+                        "type": "String"
+                    },
+                    {
+                        "name": "novalidate",
+                        "type": "String"
+                    },
+                    {
+                        "name": "method",
+                        "type": "String"
+                    }
+                ],
+                "pk": "token"
+            },
+            {
+                "name": "inputs",
+                "columns": [
+                    {
+                        "name": "token",
+                        "type": "String"
+                    },
+                    {
+                        "name": "formtoken",
+                        "type": "String"
+                    },
+                    {
+                        "name": "id",
+                        "type": "String"
+                    },
+                    {
+                        "name": "type",
+                        "type": "String"
+                    },
+                    {
+                        "name": "value",
+                        "type": "String"
+                    },
+                    {
+                        "name": "placeholder",
+                        "type": "String"
+                    },
+                    {
+                        "name": "required",
+                        "type": "Boolean default false"
+                    },
+                    {
+                        "name": "maxlength",
+                        "type": "Int16 default 0"
+                    },
+                    {
+                        "name": "minlength",
+                        "type": "Int16 default 0"
+                    },
+                    {
+                        "name": "size",
+                        "type": "String"
+                    },
+                    {
+                        "name": "checked",
+                        "type": "Boolean default false"
+                    },
+                    {
+                        "name": "disable",
+                        "type": "Boolean default false"
+                    },
+                    {
+                        "name": "readonly",
+                        "type": "Boolean default false"
+                    },
+                    {
+                        "name": "hidden",
+                        "type": "Boolean default false"
+                    },
+                    {
+                        "name": "multiple",
+                        "type": "Boolean default false"
+                    },
+                    {
+                        "name": "accept",
+                        "type": "String"
+                    },
+                    {
+                        "name": "pattern",
+                        "type": "String"
+                    },
+                    {
+                        "name": "autocomplete",
+                        "type": "Boolean default false"
+                    }        
+                ],
+                "pk": "token"
+            }
+        ]
+    }
+]

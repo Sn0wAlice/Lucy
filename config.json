@@ -1,0 +1,6 @@
+{
+    "host": "CLICKHOUSE_HOST",
+    "database": "CLICKHOUSE_DATABASE",
+    "username": "CLICKHOUSE_USER",
+    "password": "CLICKHOUSE_PASSWORD"
+}

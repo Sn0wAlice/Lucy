@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  lucy:
+    container_name: lucy
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
